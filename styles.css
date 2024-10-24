@@ -1,0 +1,293 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0056b3;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.cta-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+}
+
+.catalog {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.level-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+}
+
+.level-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.level-card h2 {
+    color: #0056b3;
+}
+
+.level-card ul {
+    padding-left: 1.5rem;
+}
+
+.game-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.level {
+    display: none;
+}
+
+.word-container, .drop-zone, .synonym-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+.word, .synonym {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.word:hover, .synonym:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.drop-zone {
+    border: 2px dashed #0056b3;
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.drop-zone.drag-over {
+    background-color: rgba(0, 86, 179, 0.1);
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #003d82;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#nextLevel {
+    display: none;
+    margin-top: 20px;
+}
+
+.match-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.match-sentence {
+    text-align: left;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.match-tense {
+    width: 150px;
+    height: 40px;
+    border: 2px dashed #0056b3;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.synonym.selected {
+    background-color: #003d82;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.correct {
+    color: #28a745;
+    animation: pop 0.3s ease;
+}
+
+.incorrect {
+    color: #dc3545;
+    animation: pop 0.3s ease;
+}
+
+#congratulations {
+    background: linear-gradient(135deg, #0056b3, #00a0e9);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#congratulations h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#trophy {
+    font-size: 80px;
+    margin: 20px 0;
+}
+
+#stars {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.star {
+    font-size: 30px;
+    color: gold;
+    margin: 0 5px;
+}
+
+#congratulations button {
+    background-color: white;
+    color: #0056b3;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#congratulations button:hover {
+    background-color: #f0f8ff;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-content button {
+    margin-top: 10px;
+}

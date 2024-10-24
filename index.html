@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocalab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Vocalab</div>
+            <ul>
+                <li><a href="#simulations">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <button class="cta-button">Get Started</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="homepage">
+            <h1>Explore the Vocalab Catalog</h1>
+            <div class="catalog">
+                <div class="level-card" onclick="startGame(1)">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062795.png" alt="Scrambled Words">
+                    <h2>Scrambled Words</h2>
+                    <ul>
+                        <li>Arrange words in correct order</li>
+                        <li>Timed challenges</li>
+                        <li>Difficulty increases progressively</li>
+                    </ul>
+                </div>
+                <div class="level-card" onclick="startGame(2)">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWlxnUTu3D3-8T40-XdAeQDh1PS7r5IhvV5g&s" alt="Sentence Structure">
+                    <h2>Sentence Structure</h2>
+                    <ul>
+                        <li>Match sentences to tenses</li>
+                        <li>Identify parts of speech</li>
+                        <li>Create complex sentences</li>
+                    </ul>
+                </div>
+                <div class="level-card" onclick="startGame(3)">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5089/5089132.png" alt="Vocabulary Builder">
+                    <h2>Vocabulary Builder</h2>
+                    <ul>
+                        <li>Choose correct synonyms</li>
+                        <li>Fill in the blanks</li>
+                        <li>Context-based word usage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-container" class="game-container" style="display: none;">
+            <h1>VocaLab</h1>
+            
+            <div id="level1" class="level">
+                <h2>Level 1: Arrange the words</h2>
+                <div id="words" class="word-container"></div>
+                <div id="sentence" class="drop-zone"></div>
+                <button onclick="checkLevel1()">Check Answer</button>
+            </div>
+
+            <div id="level2" class="level">
+                <h2>Level 2: Match sentences to tenses</h2>
+                <div id="matches"></div>
+                <div id="tenses" class="word-container"></div>
+                <button onclick="checkLevel2()">Check Answer</button>
+            </div>
+
+            <div id="level3" class="level">
+                <h2>Level 3: Choose the correct synonym</h2>
+                <p id="word-to-match"></p>
+                <div id="synonyms" class="synonym-container"></div>
+                <button onclick="checkLevel3()">Check Answer</button>
+            </div>
+
+            <div id="congratulations" class="level">
+                <h2>Congratulations!</h2>
+                <div id="trophy"></div>
+                <div id="stars"></div>
+                <p>You've completed all levels of the English Language Game!</p>
+                <p>You're a language master!</p>
+                <button onclick="playAgain()">Play Again</button>
+            </div>
+
+            <div id="result"></div>
+            <button id="nextLevel" onclick="nextLevel()">Next Level</button>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
